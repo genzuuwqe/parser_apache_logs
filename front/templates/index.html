@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Apache Log Aggregator</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+    <h1>Агрегатор логов Apache</h1>
+    
+    <div id="auth-section">
+        <h2 style="text-align:center;">Вход в систему</h2>
+        <input type="text" id="username" placeholder="Логин">
+        <input type="password" id="password" placeholder="Пароль">
+        <div style="text-align:center; margin-top:10px;">
+            <button onclick="login()">Войти</button>
+            <button onclick="register()" style="background: #95a5a6;">Регистрация</button>
+        </div>
+    </div>
+
+   <div id="app-section" class="hidden">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+        <h2 style="margin: 0;">Управление логами</h2>
+        <button onclick="logout()" style="background: #e74c3c; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer;">Выйти</button>
+    </div>
+
+    <div style="margin-bottom: 20px; background: #f9f9f9; padding: 15px; border-radius: 6px;">
+        <button onclick="triggerParse()" style="background: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">Запустить парсинг вручную</button>
+        <div id="parse-status" style="margin-top: 10px; font-weight: bold;"></div>
+    </div>
+
+    <h3>Поиск и фильтрация</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        <input type="text" id="keyword" placeholder="Ключевое слово (URL/IP)" style="flex-grow: 1;">
+        <input type="date" id="start-date" title="Начальная дата">
+        <input type="date" id="end-date" title="Конечная дата">
+        
+        <select id="group-by">
+            <option value="">Без группировки</option>
+            <option value="ip">Группировать по IP</option>
+            <option value="date">Группировать по дате</option>
+        </select>
+        
+        <button onclick="fetchLogs()" style="background: #2980b9; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Найти</button>
+    </div>
+
+    <h3>Статус загрузки</h3>
+    <div id="progress-container" style="width: 100%; background: #ecf0f1; border-radius: 4px; height: 20px; overflow: hidden; margin-bottom: 5px;">
+        <div id="progress-bar" style="height: 100%; background: #3498db; width: 0%; transition: width 0.2s;"></div>
+    </div>
+    <p id="load-status" style="font-size: 0.9em; color: #666;">Ожидание...</p>
+
+    <h3>Результаты</h3>
+    <ul id="results-list" style="list-style: none; padding: 0;"></ul>
+    
+    <h3>Выбранный контент</h3>
+    <pre id="selected-content" style="background: #f4f4f4; padding: 15px; border-radius: 4px; overflow-x: auto; border: 1px solid #ddd;"></pre>
+   </div>
+</body>
+</html>

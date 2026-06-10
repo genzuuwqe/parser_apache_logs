@@ -1,0 +1,192 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* --- Контейнеры --- */
+#auth-section, #app-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- Формы авторизации --- */
+#auth-section input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#auth-section button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+#auth-section button:first-of-type {
+    background: #3498db;
+    color: white;
+}
+
+#auth-section button:first-of-type:hover {
+    background: #2980b9;
+}
+
+#auth-section button:last-of-type {
+    background: #95a5a6;
+    color: white;
+}
+
+#auth-section button:last-of-type:hover {
+    background: #7f8c8d;
+}
+
+/* --- Панель управления --- */
+#app-section input, #app-section select {
+    padding: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#app-section button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: #27ae60;
+    color: white;
+    transition: background 0.2s;
+}
+
+#app-section button:hover {
+    background: #219a52;
+}
+
+/* --- Статус парсинга --- */
+#parse-status {
+    margin-top: 10px;
+    padding: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* --- Прогресс-бар --- */
+#progress-container {
+    width: 100%;
+    background: #ecf0f1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+#progress-bar {
+    height: 20px;
+    background: #3498db;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+#load-status {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* --- Список результатов --- */
+#results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#results-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+#results-list li:hover {
+    background: #eef2f5;
+}
+
+/* --- Блок выбранного контента --- */
+#selected-content {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    min-height: 60px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* --- Скрытие элементов --- */
+.hidden {
+    display: none;
+}
+
+/* --- Модальное окно --- */
+#custom-modal {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+#custom-modal h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#custom-modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#custom-modal button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
