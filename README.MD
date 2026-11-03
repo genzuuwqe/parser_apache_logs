@@ -107,9 +107,9 @@ pip install -r requirements.txt.
 ```
     cd back
 ```
-
     Запустите приложение:
-``` python app.py.
+```
+python app.py.
 ```
     Откройте браузер по адресу
 ```
